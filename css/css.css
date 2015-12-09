@@ -1,0 +1,105 @@
+body{
+	background-color: #dedede;
+}
+#header, #footer{
+	background-color: #dedede;
+}
+
+.lightbox-gallery-container img{
+	cursor: pointer;
+	margin: 0px auto 30px auto;
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+/* Media Queries */
+@media (min-width: 1200px){
+	.lightbox-gallery-container img{
+		max-height: 159px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px){
+	.lightbox-gallery-container img{
+		max-height: 140px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.lightbox-gallery-container img{
+		max-height: 159px;
+	}
+}
+@media (max-width: 767px){
+	.lightbox-gallery-container img{
+		max-height: 100px;
+	}
+}
+
+
+/************/
+/* LIGHTBOX */
+/************/
+
+.lightbox-container{
+	position: absolute;
+	margin: 0px auto;
+	background-color: #fff;
+	border: solid 1px #fff;
+	padding: 30px;
+	border-radius: 10px;
+	z-index: 9999;
+	overflow: hidden;
+	box-shadow: 0px 0px 30px #000;
+}
+.lightbox-container .lightbox-title{
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.lightbox-container .lightbox-image{
+	display: block;
+	margin: 0px auto;
+	overflow: hidden;
+}
+.lightbox-container .lightbox-image img{
+	display: block;
+	margin: 0px auto;
+	max-width: 100%;
+}
+.lightbox-container .lightbox-prev{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	cursor: pointer;
+}
+.lightbox-container .lightbox-next{
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	cursor: pointer;
+}
+.lightbox-container .lightbox-close{
+	position: absolute;
+	top: 5px; 
+	right: 5px;
+	cursor: pointer;
+}
+.lightbox-overlay{
+	background-color: #000;
+	opacity: .5;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	overflow: visible;
+}
+
+/**************/
+/* PAGINATION */
+/**************/
+.pagination:before{
+	clear: left;
+}
