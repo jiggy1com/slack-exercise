@@ -4,19 +4,17 @@
 // https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=c5562b851723219b1fbea51790bb347a&user_id=44327319@N06&format=json&nojsoncallback=1&per_page=12
 
 function FlickrAPI(obj){
-	this.elementID 		= obj.elementID;	// element to load images
-	this.data 			= null;				// json data from flickr
-	this.flickrAPIKey 	= obj.flickrAPIKey;	// api key
-	this.flickrUserID 	= obj.flickrUserID; // flickr user_id parameter
-	this.perPage 		= obj.perPage || 12; // flickr per_page parameter
-	this.page 			= obj.page || 1; 	// flickr page parameter
-	this.http 			= new HTTP(); 		// create a new http instance
+	this.elementID 		= obj.elementID;		// element to load images
+	this.data 			= null;					// json data from flickr
+	this.flickrAPIKey 	= obj.flickrAPIKey;		// flickr api key
+	this.flickrUserID 	= obj.flickrUserID; 	// flickr user_id parameter
+	this.perPage 		= obj.perPage || 12; 	// flickr per_page parameter
+	this.page 			= obj.page || 1; 		// flickr page parameter
+	this.http 			= new HTTP(); 			// create a new http instance
 
 }
 
 FlickrAPI.prototype = {
-
-	//http : new HTTP(),
 
 	emptyContainer : function(){
 		document.getElementById(this.elementID).innerHTML='';
