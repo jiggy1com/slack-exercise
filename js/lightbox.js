@@ -1,20 +1,21 @@
-
+(function(window){
 
 	'use strict';
 
-	function Lightbox(){
+	// make Lightbox global
+	window.Lightbox = function(){
 
-		this.elementID 		= null; // lightbox parent element
-		this.overlay 		= null; // overlay
-		this.lightbox 		= null; // lightbox
-		this.title 			= null;
-		this.imageContainer	= null;
-		this.image 			= document.createElement('img');
-		this.span 			= document.createElement('span');
-		this.imageList 		= null;
-		this.nextButton 	= null;
-		this.prevButton 	= null;
-		this.closeButton 	= null;
+		this.overlay 		= null; // lightbox overlay
+		this.lightbox 		= null; // lightbox container
+
+		this.title 			= null; // lightbox title
+		this.imageContainer	= null; // lightbox image container
+		this.image 			= document.createElement('img'); 	// lightbox image
+		this.imageList 		= null; // lightbox image list
+
+		this.nextButton 	= null; // lightbox next button
+		this.prevButton 	= null; // lightbox prev button
+		this.closeButton 	= null; // lightbox close button
 
 		// lightbox default settings
 		var defaults = {
@@ -35,6 +36,7 @@
 
 	}
 
+	// Lightbox public methods
 	Lightbox.prototype = {
 		openLightbox : function(imageIndex){
 			this.options.imageIndex = imageIndex;
@@ -98,12 +100,7 @@
 		}
 	}
 
-	// function repositionLightbox(){
-	// 		this.lightbox.style.top = (window.pageYOffset) + window.innerHeight / 2 - this.options.height / 2 +'px';
-	// 		this.lightbox.style.left = window.innerWidth / 2 - this.options.width / 2 +'px';
-	// 		this.lightbox.style.height = this.options.height +'px';
-	// 		this.lightbox.style.width = this.options.width +'px';
-	// }
+	// Lightbox internal methods
 
 	function extendDefaults(oDefaults, oUserDefaults){
 		var property;
@@ -222,3 +219,4 @@
 	}
 	
 
+})(window);
